@@ -20,14 +20,14 @@ public class CircularBuffer {
     }
 
     public Object poll() {
-        Object currentObject = buffer[readCursor];
+        final Object value = buffer[readCursor];
 
-        if (currentObject != null) {
+        if (value != null) {
             buffer[readCursor] = null;
             readCursor = next(readCursor);
         }
 
-        return currentObject;
+        return value;
     }
 
     private int next(int index) {
