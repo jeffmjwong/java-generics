@@ -23,4 +23,9 @@ public class CircularBufferTest {
         assertTrue(buffer.offer(2));
         assertFalse(buffer.offer(3));
     }
+
+    @Test
+    public void shouldNotPollWhenBufferIsEmpty() {
+        assertNull(buffer.poll());
+    }
 }
