@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
 public class CircularBufferTest {
-    private CircularBuffer buffer = new CircularBuffer(2);
+    private CircularBuffer<Integer> buffer = new CircularBuffer<>(2);
 
     @Test
     public void shouldOfferPollableElement() {
