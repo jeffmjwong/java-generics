@@ -2,7 +2,7 @@ package com.pluralsight.generics;
 
 public class Main {
     public static void main(String[] args) {
-        final CircularBuffer buffer = new CircularBuffer(10);
+        final CircularBuffer<String> buffer = new CircularBuffer<>(10);
 
         buffer.offer("a");
         buffer.offer("bc");
@@ -12,11 +12,11 @@ public class Main {
         System.out.println(value);
     }
 
-    private static String concatenate(CircularBuffer buffer) {
+    private static String concatenate(CircularBuffer<String> buffer) {
         StringBuilder builder = new StringBuilder();
         String value;
 
-        while ((value = (String) buffer.poll()) != null) {
+        while ((value = buffer.poll()) != null) {
             builder.append(value);
         }
 

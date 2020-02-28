@@ -19,8 +19,8 @@ public class CircularBuffer<T> {
         return true;
     }
 
-    public Object poll() {
-        final Object value = buffer[readCursor];
+    public T poll() {
+        final T value = buffer[readCursor];
 
         if (value != null) {
             buffer[readCursor] = null;
