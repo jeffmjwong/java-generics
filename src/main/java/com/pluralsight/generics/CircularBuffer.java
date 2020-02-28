@@ -1,29 +1,29 @@
 package com.pluralsight.generics;
 
 public class CircularBuffer {
-    private Object[] objects;
+    private Object[] buffer;
     private int readCursor = 0;
     private int writeCursor = 0;
 
     public CircularBuffer(int size) {
-        this.objects = new Object[size];
+        buffer = new Object[size];
     }
 
-    public boolean offer(Object obj) {
-        if (objects[writeCursor] != null) {
+    public boolean offer(Object value) {
+        if (buffer[writeCursor] != null) {
             return false;
         }
 
-        objects[writeCursor] = obj;
+        buffer[writeCursor] = value;
         writeCursor = next(writeCursor);
         return true;
     }
 
     public Object poll() {
-        Object currentObject = objects[readCursor];
+        Object currentObject = buffer[readCursor];
 
         if (currentObject != null) {
-            objects[readCursor] = null;
+            buffer[readCursor] = null;
             readCursor = next(readCursor);
         }
 
@@ -31,6 +31,6 @@ public class CircularBuffer {
     }
 
     private int next(int index) {
-        return (index + 1) % objects.length;
+        return (index + 1) % buffer.length;
     }
 }
