@@ -17,4 +17,15 @@ public class Person {
     public int getAge() {
         return age;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Person p = (Person) obj;
+
+        return name.equals(p.getName()) && age == p.getAge();
+    }
 }
