@@ -1,16 +1,25 @@
 package com.pluralsight.generics;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
-//        List<String> list = new ArrayList<>();
-//        list.add("c");
-//        list.add("a");
-//        list.add("b");
-//
-//        String string1 = list.get(0);
-//        System.out.println(string1);
+        final CircularBuffer buffer = new CircularBuffer(10);
+
+        buffer.offer("a");
+        buffer.offer("bc");
+        buffer.offer("d");
+
+        String value = concatenate(buffer);
+        System.out.println(value);
+    }
+
+    private static String concatenate(CircularBuffer buffer) {
+        StringBuilder builder = new StringBuilder();
+        String value;
+
+        while ((value = (String) buffer.poll()) != null) {
+            builder.append(value);
+        }
+
+        return builder.toString();
     }
 }
