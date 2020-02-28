@@ -2,6 +2,8 @@ package com.pluralsight.generics;
 
 import org.junit.Test;
 
+import java.util.Optional;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -13,7 +15,7 @@ public class CircularBufferTest {
     @Test
     public void shouldOfferPollableElement() {
         assertTrue(buffer.offer(1));
-        assertEquals(1, buffer.poll());
+        assertEquals(Optional.of(1).get(), buffer.poll());
         assertNull(buffer.poll());
     }
 
@@ -33,9 +35,9 @@ public class CircularBufferTest {
     public void shouldRecycleBuffer() {
         assertTrue(buffer.offer(1));
         assertTrue(buffer.offer(2));
-        assertEquals(1, buffer.poll());
+        assertEquals(Optional.of(1).get(), buffer.poll());
         assertTrue(buffer.offer(3));
-        assertEquals(2, buffer.poll());
-        assertEquals(3, buffer.poll());
+        assertEquals(Optional.of(2).get(), buffer.poll());
+        assertEquals(Optional.of(3).get(), buffer.poll());
     }
 }
