@@ -6,6 +6,7 @@ public class Main {
         Person p1 = new Person("Arthur Lee", 29);
         System.out.println(p1.getName());
         System.out.println(p1.getAge());
+        System.out.println(p1.hashCode());
     }
 
     private static void useCircularBuffer() {

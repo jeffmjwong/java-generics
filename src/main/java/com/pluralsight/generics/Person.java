@@ -28,4 +28,11 @@ public class Person {
 
         return name.equals(p.getName()) && age == p.getAge();
     }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + age;
+        return result;
+    }
 }
