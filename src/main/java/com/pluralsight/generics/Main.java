@@ -1,6 +1,9 @@
 package com.pluralsight.generics;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Main {
@@ -9,12 +12,9 @@ public class Main {
         Person p1 = new Person("Arthur Lee", 29);
         Person p2 = new Person("Saw Kah Chun", 30);
         Person p3 = new Person("Chan", 28);
-        Map<String, Person> map1 = new HashMap<>();
-        map1.put(p1.getName(), p1);
-        map1.put(p2.getName(), p2);
-        map1.put(p3.getName(), p3);
 
-        map1.forEach((string, person) -> System.out.println(string + " is " + person + "!"));
+        List<Person> list1 = new ArrayList<>(Arrays.asList(p1, p2, p3));
+        System.out.println(list1);
     }
 
     private static void useCircularBuffer() {
