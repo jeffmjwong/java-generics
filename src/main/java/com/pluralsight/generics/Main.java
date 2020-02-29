@@ -17,7 +17,7 @@ public class Main {
 
         List<Person> list1 = new ArrayList<>(Arrays.asList(p1, p2, p3));
 
-        Collections.sort(list1, Comparator.comparingInt(Person::getAge));
+        Collections.sort(list1, Comparator.comparing(Person::getAge));
 
         System.out.println(list1);
     }
