@@ -7,6 +7,7 @@ public class Main {
         System.out.println(p1.getName());
         System.out.println(p1.getAge());
         System.out.println(p1.hashCode());
+        System.out.println(p1);
     }
 
     private static void useCircularBuffer() {
