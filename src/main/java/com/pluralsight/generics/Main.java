@@ -2,6 +2,8 @@ package com.pluralsight.generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +16,9 @@ public class Main {
         Person p3 = new Person("Chan", 28);
 
         List<Person> list1 = new ArrayList<>(Arrays.asList(p1, p2, p3));
+
+        Collections.sort(list1, Comparator.comparingInt(Person::getAge));
+
         System.out.println(list1);
     }
 
