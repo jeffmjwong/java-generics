@@ -1,13 +1,20 @@
 package com.pluralsight.generics;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
 //        useCircularBuffer();
         Person p1 = new Person("Arthur Lee", 29);
-        System.out.println(p1.getName());
-        System.out.println(p1.getAge());
-        System.out.println(p1.hashCode());
-        System.out.println(p1);
+        Person p2 = new Person("Saw Kah Chun", 30);
+        Person p3 = new Person("Chan", 28);
+        Map<String, Person> map1 = new HashMap<>();
+        map1.put(p1.getName(), p1);
+        map1.put(p2.getName(), p2);
+        map1.put(p3.getName(), p3);
+
+        map1.forEach((string, person) -> System.out.println(string + " is " + person + "!"));
     }
 
     private static void useCircularBuffer() {
