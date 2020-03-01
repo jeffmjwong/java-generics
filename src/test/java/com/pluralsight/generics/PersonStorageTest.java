@@ -30,5 +30,8 @@ public class PersonStorageTest {
         persons[1] = nick;
 
         saver.saveAll(persons);
+
+        assertEquals(matt, loader.load());
+        assertEquals(nick, loader.load());
     }
 }
