@@ -16,7 +16,7 @@ public class PersonLoader {
         return new Person("Bob", 20);
     }
 
-    public void loadAll(final List<Person> people) throws ClassNotFoundException {
+    public void loadAll(final List<? super Person> people) throws ClassNotFoundException {
         Person person;
         while ((person = load()) != null) {
             people.add(person);
