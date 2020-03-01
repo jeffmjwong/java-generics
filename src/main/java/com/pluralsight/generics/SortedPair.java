@@ -1,12 +1,17 @@
 package com.pluralsight.generics;
 
-public class SortedPair<T> {
+public class SortedPair<T extends Comparable> {
     private final T first;
     private final T second;
 
     public SortedPair(T t1, T t2) {
-        first = t1;
-        second = t2;
+        if (t1.compareTo(t2) < 0) {
+            first = t1;
+            second = t2;
+        } else {
+            first = t2;
+            second = t1;
+        }
     }
 
     public T getFirst() {
@@ -15,4 +20,5 @@ public class SortedPair<T> {
     public T getSecond() {
         return second;
     }
+
 }
