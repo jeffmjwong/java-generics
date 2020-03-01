@@ -5,6 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class PersonStorageTest {
     private Partner matt = new Partner("Matt", 57);
@@ -25,11 +28,13 @@ public class PersonStorageTest {
 
     @Test
     public void savesAndLoadsArraysOfPeople() throws Exception {
-        Person[] persons = new Person[2];
-        persons[0] = matt;
-        persons[1] = nick;
+        List<Person> persons = new ArrayList<>(Arrays.asList(matt, nick, mike));
+        List<Employee> employees = new ArrayList<>(Arrays.asList(mike));
+        List<Partner> partners = new ArrayList<>(Arrays.asList(matt, nick));
 
         saver.saveAll(persons);
+        saver.saveAll(employees);
+        saver.saveAll(partners);
 
         assertEquals(matt, loader.load());
         assertEquals(nick, loader.load());

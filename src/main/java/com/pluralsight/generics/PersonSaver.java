@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.List;
 
 public class PersonSaver {
     private final RandomAccessFile file;
@@ -16,7 +17,7 @@ public class PersonSaver {
         return true;
     }
 
-    public boolean saveAll(Person[] persons) throws IOException {
+    public boolean saveAll(List<? extends Person> persons) throws IOException {
         for (Person person : persons) {
             save(person);
         }
