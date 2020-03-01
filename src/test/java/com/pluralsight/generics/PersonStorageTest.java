@@ -39,4 +39,16 @@ public class PersonStorageTest {
         assertEquals(matt, loader.load());
         assertEquals(nick, loader.load());
     }
+
+    @Test
+    public void loadsListsOfPeople() throws Exception {
+        saver.save(matt);
+        saver.save(nick);
+
+        List<Person> people = new ArrayList<>();
+        loader.loadAll(people);
+
+        assertEquals(matt, people.get(0));
+        assertEquals(nick, people.get(1));
+    }
 }
