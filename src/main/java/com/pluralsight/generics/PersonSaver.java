@@ -17,7 +17,7 @@ public class PersonSaver {
         return true;
     }
 
-    public boolean saveAll(List<? extends Person> persons) throws IOException {
+    public <T extends Person> boolean saveAll(List<T> persons) throws IOException {
         for (Person person : persons) {
             save(person);
         }
