@@ -17,9 +17,9 @@ public class Main {
 
         List<Person> list1 = new ArrayList<>(Arrays.asList(p1, p2, p3));
 
-        list1.sort(new AgeComparator());
+        final Person youngestPerson = min(list1, new AgeComparator());
 
-        System.out.println(list1);
+        System.out.println(youngestPerson);
     }
 
     private static void useCircularBuffer() {
