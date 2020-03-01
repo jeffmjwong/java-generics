@@ -17,19 +17,19 @@ public class Main {
 
         List<Person> list1 = new ArrayList<>(Arrays.asList(p1, p2, p3));
 
-        final Person youngestPerson = (Person) min(list1, new AgeComparator());
+        final Person youngestPerson = min(list1, new AgeComparator());
 
         System.out.println(youngestPerson);
     }
 
-    private static Object min(List list, Comparator comparator) {
+    private static <T> T min(List<T> list, Comparator<T> comparator) {
         if (list.isEmpty()) {
             throw new IllegalArgumentException("List is empty, cannot find minimum!");
         }
 
-        Object lowestElement = list.get(0);
+        T lowestElement = list.get(0);
 
-        for (Object element : list) {
+        for (T element : list) {
             if (comparator.compare(element, lowestElement) < 0) {
                 lowestElement = element;
             }
