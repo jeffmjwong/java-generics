@@ -27,8 +27,15 @@ public class Main {
             throw new IllegalArgumentException("List is empty, cannot find minimum!");
         }
 
-        list.sort(comparator);
-        return list.get(0);
+        Object lowestElement = list.get(0);
+
+        for (Object element : list) {
+            if (comparator.compare(element, lowestElement) < 0) {
+                lowestElement = element;
+            }
+        }
+
+        return lowestElement;
     }
 
     private static void useCircularBuffer() {
