@@ -18,9 +18,17 @@ public class PersonStorageTest {
     @Test
     public void savesAndLoadPerson() throws Exception {
         Person person = new Person("Bob", 20);
-        saver.save(matt);
-        saver.save(mike);
+        saver.save(person);
 
         assertEquals(person, loader.load());
+    }
+
+    @Test
+    public void savesAndLoadsArraysOfPeople() throws Exception {
+        Person[] persons = new Person[2];
+        persons[0] = matt;
+        persons[1] = nick;
+
+        saver.saveAll(persons);
     }
 }
