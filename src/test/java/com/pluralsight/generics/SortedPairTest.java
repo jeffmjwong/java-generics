@@ -12,4 +12,12 @@ public class SortedPairTest {
         assertEquals(1, sp.getFirst().intValue());
         assertEquals(2, sp.getSecond().intValue());
     }
+
+    @Test
+    public void shouldFlipOrderOfMisorderedPair() {
+        SortedPair<Integer> sp = new SortedPair<>(2, 1);
+
+        assertEquals(1, sp.getFirst().intValue());
+        assertEquals(2, sp.getSecond().intValue());
+    }
 }
