@@ -12,6 +12,6 @@ public class PersonLoader {
     }
 
     public Person load() throws ClassNotFoundException {
-
+        return new Person("Steven", 25);
     }
 }
