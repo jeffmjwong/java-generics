@@ -15,4 +15,12 @@ public class PersonSaver {
     public boolean save(Person person) throws IOException {
         return true;
     }
+
+    public boolean saveAll(Person[] persons) throws IOException {
+        for (Person person : persons) {
+            save(person);
+        }
+
+        return true;
+    }
 }
