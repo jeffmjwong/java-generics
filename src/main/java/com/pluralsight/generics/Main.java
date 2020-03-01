@@ -17,9 +17,18 @@ public class Main {
 
         List<Person> list1 = new ArrayList<>(Arrays.asList(p1, p2, p3));
 
-        final Person youngestPerson = min(list1, new AgeComparator());
+        final Person youngestPerson = (Person) min(list1, new AgeComparator());
 
         System.out.println(youngestPerson);
+    }
+
+    private static Object min(List list, Comparator comparator) {
+        if (list.isEmpty()) {
+            throw new IllegalArgumentException("List is empty, cannot find minimum!");
+        }
+
+        list.sort(comparator);
+        return list.get(0);
     }
 
     private static void useCircularBuffer() {
