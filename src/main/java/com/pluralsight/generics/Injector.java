@@ -11,7 +11,11 @@ public class Injector {
         return this;
     }
 
-    public Object newInstance(final String className) {
+    public Map<Class<?>, Object> getObjectGraph() {
+        return objectGraph;
+    }
+
+    public Object newInstance(final Class<?> className) {
         return null;
     }
 }
