@@ -8,7 +8,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException {
 //        useCircularBuffer();
-        useMethodGenerics();
+//        useMethodGenerics();
     }
 
     private static void useMethodGenerics() {
