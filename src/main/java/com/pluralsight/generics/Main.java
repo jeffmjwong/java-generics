@@ -6,8 +6,12 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
 //        useCircularBuffer();
+        useMethodGenerics();
+    }
+
+    private static void useMethodGenerics() {
         Person p1 = new Person("Arthur Lee", 29);
         Person p2 = new Person("Saw Kah Chun", 30);
         Person p3 = new Person("Chan", 28);

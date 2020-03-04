@@ -2,7 +2,10 @@ package com.pluralsight.generics;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 public class PersonLoader {
@@ -13,7 +16,20 @@ public class PersonLoader {
     }
 
     public Person load() throws ClassNotFoundException {
-        return new Person("Bob", 20);
+        return null;
+//        try {
+//            final String className = file.readUTF();
+//            final String personName = file.readUTF();
+//            final int age = file.readInt();
+//
+//            final Class<?> personClass = Class.forName(className);
+//            final Constructor<?> constructor = personClass.getConstructor(String.class, int.class);
+//            return (Person) constructor.newInstance(personName, age);
+//        } catch (IOException e) {
+//            return null;
+//        } catch (NoSuchMethodException | InvocationTargetException | InstantiationException) {
+//            return null;
+//        }
     }
 
     public void loadAll(final List<? super Person> people) throws ClassNotFoundException {
