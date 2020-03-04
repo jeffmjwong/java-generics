@@ -14,9 +14,10 @@ public class Main {
 
         List<String> strings = new ArrayList<>();
         Class<?> arrayList = strings.getClass();
-        TypeVariable<? extends Class<?>>[] typeParameters = arrayList.getTypeParameters();
+        TypeVariable<?>[] typeParameters = arrayList.getTypeParameters();
         System.out.println(arrayList);
-        System.out.println(typeParameters[0]);
+        System.out.println(arrayList.toGenericString());
+        System.out.println(Arrays.toString(typeParameters));
     }
 
     private static void useInjectorAndLogger() {
