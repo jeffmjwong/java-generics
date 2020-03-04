@@ -15,7 +15,7 @@ public class Injector {
         return objectGraph;
     }
 
-    public Object newInstance(final Class<?> className) {
+    public <T> T newInstance(final Class<T> className) {
         return null;
     }
 }

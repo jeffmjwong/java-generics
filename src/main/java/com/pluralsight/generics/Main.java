@@ -13,7 +13,7 @@ public class Main {
         System.out.println(injector.getObjectGraph());
         injector.with("hello world");
         System.out.println(injector.getObjectGraph());
-        Logger logger = (Logger) injector.newInstance(Logger.class);
+        Logger logger = injector.newInstance(Logger.class);
         logger.log();
     }
 
