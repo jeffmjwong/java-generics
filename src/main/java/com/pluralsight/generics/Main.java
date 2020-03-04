@@ -1,5 +1,6 @@
 package com.pluralsight.generics;
 
+import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -13,7 +14,9 @@ public class Main {
 
         List<String> strings = new ArrayList<>();
         Class<?> arrayList = strings.getClass();
+        TypeVariable<? extends Class<?>>[] typeParameters = arrayList.getTypeParameters();
         System.out.println(arrayList);
+        System.out.println(typeParameters[0]);
     }
 
     private static void useInjectorAndLogger() {
