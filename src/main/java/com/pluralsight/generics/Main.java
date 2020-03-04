@@ -9,9 +9,7 @@ public class Main {
     public static void main(String[] args) throws ClassNotFoundException {
 //        useCircularBuffer();
 //        useMethodGenerics();
-        Injector injector = new Injector();
-        System.out.println(injector.getObjectGraph());
-        injector.with("hello world");
+        Injector injector = new Injector().with("hello world");
         System.out.println(injector.getObjectGraph());
         Logger logger = injector.newInstance(Logger.class);
         logger.log();
