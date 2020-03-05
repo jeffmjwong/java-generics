@@ -20,13 +20,8 @@ public class Main {
         final Person bastian = new Person("Bastian Saw", 30);
         final Person vincent = new Person("Vincent Lim", 28);
 
-        Predicate<Person> olderThan29 = person -> person.getAge() > 29;
-        System.out.println(olderThan29.test(arthur));
-        System.out.println(olderThan29.test(bastian));
-        System.out.println(olderThan29.test(vincent));
-
         final List<Person> people = new ArrayList<>(Arrays.asList(arthur, bastian, vincent));
-        final Map<Boolean, List<Person>> map1 = people.stream().collect(Collectors.partitioningBy(olderThan29));
+        final Map<Boolean, List<Person>> map1 = people.stream().collect(Collectors.partitioningBy(person -> person.getAge() > 29));
         System.out.println(map1);
     }
 
