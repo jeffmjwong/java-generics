@@ -7,7 +7,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.partitioningBy;
+import static java.util.stream.Collectors.counting;
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException {
@@ -21,7 +23,9 @@ public class Main {
         final Person vincent = new Person("Vincent Lim", 28);
 
         final List<Person> people = new ArrayList<>(Arrays.asList(arthur, bastian, vincent));
-        final Map<Boolean, List<Person>> map1 = people.stream().collect(Collectors.partitioningBy(person -> person.getAge() > 29));
+        final Map<Boolean, Long> map1 = people
+                .stream()
+                .collect(partitioningBy(person -> person.getAge() > 29, counting()));
         System.out.println(map1);
     }
 
