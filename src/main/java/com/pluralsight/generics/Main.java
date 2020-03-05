@@ -11,8 +11,11 @@ public class Main {
 //        useCircularBuffer();
 //        useMethodGenerics();
 //        useInjectorAndLogger();
+        useTypeParametersAndToGenericStringMethods();
+    }
 
-        List<String> strings = new ArrayList<>();
+    private static void useTypeParametersAndToGenericStringMethods() {
+        List<String> strings = new ArrayList<>(Arrays.asList("string1", "string2"));
         Class<?> arrayList = strings.getClass();
         TypeVariable<?>[] typeParameters = arrayList.getTypeParameters();
         System.out.println(arrayList);
