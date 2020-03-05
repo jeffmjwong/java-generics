@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.partitioningBy;
 import static java.util.stream.Collectors.counting;
@@ -17,7 +16,26 @@ public class Main {
 //        useMethodGenerics();
 //        useInjectorAndLogger();
 //        useTypeParametersAndToGenericStringMethods();
-        useCollectorsMethod();
+//        useCollectorsMethod();
+        useUnsafeArrayGenerics();
+    }
+
+    private static void useUnsafeArrayGenerics() {
+        Object[] ints1 = pair(1);
+        System.out.println(ints1.getClass());
+        System.out.println(Arrays.toString(ints1));
+
+        Integer[] ints2 = pair(1);
+        System.out.println(ints2.getClass());
+        System.out.println(Arrays.toString(ints2));
+    }
+
+    private static <T> T[] pair(T t) {
+        return arrayOf(t, t);
+    }
+
+    private static <T> T[] arrayOf(T ...values) {
+        return values;
     }
 
     private static void useCollectorsMethod() {
