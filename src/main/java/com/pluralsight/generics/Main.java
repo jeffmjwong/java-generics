@@ -5,13 +5,29 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException {
 //        useCircularBuffer();
 //        useMethodGenerics();
 //        useInjectorAndLogger();
-        useTypeParametersAndToGenericStringMethods();
+//        useTypeParametersAndToGenericStringMethods();
+
+        final Person arthur = new Person("Arthur Lee", 29);
+        final Person bastian = new Person("Bastian Saw", 30);
+        final Person vincent = new Person("Vincent Lim", 28);
+
+        Predicate<Person> olderThan29 = person -> person.getAge() > 29;
+        System.out.println(olderThan29.test(arthur));
+        System.out.println(olderThan29.test(bastian));
+        System.out.println(olderThan29.test(vincent));
+
+        List<Person> people = new ArrayList<>(Arrays.asList(arthur, bastian, vincent));
+        Map<Boolean, List<Person>> map1 = people.stream().collect(Collectors.partitioningBy(olderThan29));
+        System.out.println(map1);
     }
 
     private static void useTypeParametersAndToGenericStringMethods() {
