@@ -25,8 +25,8 @@ public class Main {
         System.out.println(olderThan29.test(bastian));
         System.out.println(olderThan29.test(vincent));
 
-        List<Person> people = new ArrayList<>(Arrays.asList(arthur, bastian, vincent));
-        Map<Boolean, List<Person>> map1 = people.stream().collect(Collectors.partitioningBy(olderThan29));
+        final List<Person> people = new ArrayList<>(Arrays.asList(arthur, bastian, vincent));
+        final Map<Boolean, List<Person>> map1 = people.stream().collect(Collectors.partitioningBy(olderThan29));
         System.out.println(map1);
     }
 
