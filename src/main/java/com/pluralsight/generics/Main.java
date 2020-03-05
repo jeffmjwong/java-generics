@@ -17,7 +17,10 @@ public class Main {
 //        useMethodGenerics();
 //        useInjectorAndLogger();
 //        useTypeParametersAndToGenericStringMethods();
+        useCollectorsMethod();
+    }
 
+    private static void useCollectorsMethod() {
         final Person arthur = new Person("Arthur Lee", 29);
         final Person bastian = new Person("Bastian Saw", 30);
         final Person vincent = new Person("Vincent Lim", 28);
