@@ -23,6 +23,7 @@ public class Main {
         System.out.println(ints1);
     }
 
+    @SafeVarargs
     private static <T> List<T> combine(List<? extends T> ...lists) {
         List<T> combined = new ArrayList<>();
 
