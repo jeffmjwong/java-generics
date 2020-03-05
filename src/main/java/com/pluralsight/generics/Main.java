@@ -17,7 +17,20 @@ public class Main {
 //        useInjectorAndLogger();
 //        useTypeParametersAndToGenericStringMethods();
 //        useCollectorsMethod();
-        useUnsafeArrayGenerics();
+//        useUnsafeArrayGenerics();
+        List<Integer> ints1 = combine(Arrays.asList(1, 2, 3), Arrays.asList(4, 5));
+        System.out.println(ints1.getClass());
+        System.out.println(ints1);
+    }
+
+    private static <T> List<T> combine(List<? extends T> ...lists) {
+        List<T> combined = new ArrayList<>();
+
+        for (List<? extends T> list : lists) {
+            combined.addAll(list);
+        }
+
+        return combined;
     }
 
     private static void useUnsafeArrayGenerics() {
